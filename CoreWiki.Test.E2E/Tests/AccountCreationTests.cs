@@ -1,7 +1,7 @@
 using CoreWiki.Test.E2E.Pages;
 using Xunit;
 
-namespace CoreWiki.Test.E2E
+namespace CoreWiki.Test.E2E.Tests
 {
 	public class AccountCreationTests : BaseSeleniumTest
 	{

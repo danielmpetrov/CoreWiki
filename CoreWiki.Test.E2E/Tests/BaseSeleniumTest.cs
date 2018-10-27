@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace CoreWiki.Test.E2E
+namespace CoreWiki.Test.E2E.Tests
 {
 	public abstract class BaseSeleniumTest : IDisposable
 	{
@@ -15,7 +15,7 @@ namespace CoreWiki.Test.E2E
 		public BaseSeleniumTest()
 		{
 			_driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-			_driver.Manage().Window.FullScreen();
+			_driver.Manage().Window.Maximize();
 			_driver.Navigate().GoToUrl(_baseUrl);
 		}
 
