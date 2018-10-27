@@ -25,5 +25,11 @@ namespace CoreWiki.Test.E2E
 
 			Assert.Equal("Hello Automation - CoreWiki", _driver.Title);
 		}
+
+		[Fact]
+		public void AdminShouldBeAbleToPostComment()
+		{
+			_homePageAuthenticated.PostComment("Admin", "admin@corewiki.com", "Automated comment!");
+		}
 	}
 }

@@ -1,4 +1,6 @@
-﻿using CoreWiki.Test.E2E.Pages.Account.Manage;
+﻿using System;
+using CoreWiki.Test.E2E.Pages.Account.Manage;
+using CoreWiki.Test.E2E.Support;
 using OpenQA.Selenium;
 
 namespace CoreWiki.Test.E2E.Pages
@@ -20,6 +22,8 @@ namespace CoreWiki.Test.E2E.Pages
 
 		public IWebElement EmailInput => _driver.FindElement(By.Id("Email"));
 
+		public EasyMdeEditor CommentContentEditor => new EasyMdeEditor(_driver);
+
 		public AccountManagePage GoToAccountManage()
 		{
 			ManageAccountLink.Click();
@@ -32,6 +36,14 @@ namespace CoreWiki.Test.E2E.Pages
 			EditLink.Click();
 
 			return new EditArticlePage(_driver);
+		}
+
+		public void PostComment(string displayName, string email, string content)
+		{
+			DisplayNameInput.SendKeys(displayName);
+			EmailInput.SendKeys(email);
+			CommentContentEditor.SendKeys(content);
+			DisplayNameInput.Submit();
 		}
 	}
 }
