@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace CoreWiki.Test.E2E.Pages
+namespace CoreWiki.Test.E2E.Pages.Account
 {
 	public class RegisterPage
 	{
@@ -17,13 +17,13 @@ namespace CoreWiki.Test.E2E.Pages
 
 		public IWebElement ConfirmPasswordInput => _driver.FindElement(By.Id("Input_ConfirmPassword"));
 
-		public HomePageAuthenticated Register(string email, string password)
+		public ArticleDetailsAuthenticated Register(string email, string password)
 		{
 			EmailInput.SendKeys(email);
 			PasswordInput.SendKeys(password);
 			ConfirmPasswordInput.SendKeys(password);
 			ConfirmPasswordInput.Submit();
-			return new HomePageAuthenticated(_driver);
+			return new ArticleDetailsAuthenticated(_driver);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace CoreWiki.Test.E2E.Pages
+namespace CoreWiki.Test.E2E.Pages.Account.Manage
 {
 	public class DeletePersonalDataPage
 	{

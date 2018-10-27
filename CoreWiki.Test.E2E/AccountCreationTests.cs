@@ -11,8 +11,7 @@ namespace CoreWiki.Test.E2E
 			const string email = "automation@corewiki.test.com";
 			const string password = "P@ssw0rd";
 
-			new HomePageAnonymous(_driver)
-				.HavigateToSelf()
+			new ArticleDetailsAnonymous(_driver)
 				.GoToRegisterPage()
 				.Register(email, password)
 				.GoToAccountManage()
